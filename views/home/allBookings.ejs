@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+ <div class="container">
+    <div class="button-group text-center">
+    <a href="/home">
+      <button class="btn btn-warning">Home</button>
+    </a>
+    <a href="/logout">
+      <button class="btn btn-danger">Logout</button>
+    </a>
+  </div><br>
+      <% if (typeof msg != "undefined") { %>
+        <h2 class="text-center" style="color: red"><%= msg %></h2>
+      <% } %>
+
+		<h2>Your bookings</h2><br>
+
+        <div class="table-responsive">          
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Serial</th>
+        <th>Place</th>
+        <th>Hotel</th>
+        <th>Booked by</th>
+        <th>Mobile</th>
+        <th>Time To visit</th>
+        <th>Trxid</th>
+        <th>Paid money</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i=0;i<result.length;i++) { %>
+      <tr>
+        <td><%= i+1 %></td>
+        <td><%= result[i].bookingplace %></td>
+        <td><%= result[i].hotel %></td>
+        <td><%= result[i].bookedby %></td>
+        <td><%= result[i].mobile %></td>
+        <td><%= result[i].time %></td>
+        <td><%= result[i].TrxID %></td>
+        <td><%= result[i].price %></td>
+        <td><%= result[i].status %></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+  </div>
+</div>
+ </div>
+</body>
+</html>

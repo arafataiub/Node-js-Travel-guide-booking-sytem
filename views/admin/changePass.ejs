@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Password change</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <% if (typeof msg != "undefined") { %>
+    <h2 class="text-center" style="color: #596275"><%= msg %></h2>
+      <% } %>
+    <% if (typeof msg == "undefined") { %>
+      <h2 class="text-center">Error!!</h2>
+    <% } %>
+
+    <form method="post">
+    <div class="form-group">
+    <label for="oldPass">Old Passowrd</label>
+      <input type="password" class="form-control" name="oldPass" required>
+      <br/>
+          
+      <label for="newPass1">New Passowrd</label>
+      <input type="password" class="form-control" name="newPass1" required></input>
+    <br>
+    <label for="newPass2">Confirm New Passowrd</label>
+      <input type="password" class="form-control" name="newPass2" required></input>
+    </div>
+    <div class="footer text-center center-block">
+    <button type="submit" class="btn btn-danger btn-lg">Submit</button>
+    </div>
+  </form>
+
+
+
+  </div>
+</body>
+</html>

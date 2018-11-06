@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Admin Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <% if (typeof msg != "undefined") { %>
+    <h2 class="text-center" style="color: #596275">Admin Email: <%= msg %></h2>
+      <% } %>
+    <% if (typeof msg == "undefined") { %>
+      <h2 class="text-center">Error!!</h2>
+    <% } %>
+    <div class= "button-group text-center center-block">
+      <a href="/adminHome/list"> <button class="btn btn-warning"> Booking List</button></a><br><br> 
+      <a href="/adminHome/bestPlaces"> <button class="btn btn-primary">Best places</button></a><br><br>
+
+      <a href="/adminHome/newAdmin"> <button class="btn btn-danger">Add New Admin</button></a><br><br>
+
+      <a href="/adminHome/bestMember"> <button class="btn btn-success">Best members</button></a><br><br>
+
+      <a href="/adminHome/addNewInfo"> <button class="btn btn-info">Add New place</button></a><br><br>
+
+      <a href="/adminHome/showAll"> <button class="btn btn-basic">See all places</button></a><br><br>
+
+      <a href="/adminHome/changePass"> <button class="btn btn-primary">Change Password</button></a><br><br>
+
+      <a href="/adminHome/deleteEmail"> <button class="btn btn-danger">Delete member</button></a><br><br>
+
+       <a href="/logout"> <button class="btn btn-default ">Logout</button></a> 
+ </div>
+    <br/>
+ 
+
+
+</div>
+
+</body>
+</html>

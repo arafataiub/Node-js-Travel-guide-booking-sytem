@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add new admin</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <% if (typeof msg != "undefined") { %>
+    <h2 class="text-center" style="color: red"><%= msg %></h2>
+      <% } %>
+    <% if (typeof msg == "undefined") { %>
+      <h2 class="text-center">Add Place Form</h2>
+    <% } %>
+  <a href="/adminHome"> <button class="btn btn-warning pull-right">Go to home</button></a>
+  <br>
+  <form method="post">
+    <div class="form-group">
+      <label for="place">Name of the place</label>
+      <input type="text" class="form-control" name="place" maxlength="90" required> 
+      <br/>
+      
+       <label for="details">Details about the place</label>
+      <textarea class="form-control" rows="5" name="details" maxlength="220" required></textarea>
+      <br/>
+
+        <label for="hotel">Hotel</label>
+      <textarea class="form-control" rows="3" name="hotel" maxlength="200" required></textarea>
+      <br/>
+
+       <label for="capacity">Capacity</label>
+      <input type="number" class="form-control" name="capacity" required> 
+      <br/>
+
+   <label for="category">Category</label><br>
+   <select name="category" class="dropdown" required>
+    <option disabled selected value> -- select an option -- </option>
+    <option value="beach">Beach</option>
+    <option value="forest">Forest</option>
+    <option value="hill">Hill</option>
+    <option value="fountain">Fountain</option>
+    <option value="cultural">Cultural places</option>
+    <option value="historic ">Historical places</option>
+  </select>
+    </div>
+    <div class="footer text-center center-block">
+    <button type="submit" class="btn btn-danger btn-lg">Submit</button>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

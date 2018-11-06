@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+ <div class="container">
+
+    <div class="button-group pull-right">
+      <a href="/home">
+        <button class="btn btn-warning">Home</button>
+      </a>
+      <a href="/logout">
+        <button class="btn btn-danger">Logout</button>
+      </a>
+  </div><br>
+
+      <% if (typeof msg != "undefined") { %>
+        <h2 class="text-center" style="color: red"><%= msg %></h2>
+      <% } %>
+  <h2>Name of the place: <b><%= result[0].plcaeName %></b></h2> <br>
+  <p><b>Details: </b><%= result[0].details %></p><br>
+  <p><b>Hotel name: </b><%= result[0].hotel %></p><br>
+  <p><b>Category: </b><%= result[0].category %></p><br>
+  <h3>Booking fee 500  taka bKash account 01XXXXXXXXX</h3>
+
+  <a href="/home/bookNow">
+    <button class="btn btn-success center-block">Book Now!</button>
+  </a>
+
+
+ </div>
+</body>
+</html>

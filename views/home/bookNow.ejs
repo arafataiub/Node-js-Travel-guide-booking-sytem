@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Booking</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <% if (typeof msg != "undefined") { %>
+    <h2 class="text-center" style="color: red"><%= msg %></h2>
+      <% } %>
+    <% if (typeof msg == "undefined") { %>
+      <h2 class="text-center">Book Please!</h2>
+    <% } %>
+
+    <div class="button-group pull-right">
+    <a href="/home">
+      <button class="btn btn-warning">Home</button>
+    </a>
+    <a href="/logout">
+      <button class="btn btn-danger">Logout</button>
+    </a>
+  </div><br>
+  <form method="post">
+    <div class="form-group">
+      <label for="mobile">Mobile Number: </label>
+      <input type="number" class="form-control" id="mobile" placeholder="01XXXXXXXXX" name="mobile" required>
+    </div>
+    <div class="form-group">
+      <label for="trx">TrxId</label>
+      <input type="text" class="form-control" id="trx" placeholder="Enter trxId from bKash message" name="trx" required>
+    </div>
+    <div class="form-group">
+      <label for="date">Visiting Date</label>
+      <input type="date" class="form-control" name="date" required> 
+    </div>
+    <button type="submit" class="btn btn-success center-block">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>
